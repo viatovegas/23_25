@@ -3,8 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+
     <title>AutoSec</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -17,8 +24,8 @@
   <header>
     <h1>AutoSec</h1>
     <nav>
- 
-      <ul>
+
+      <ul class="PCmenu">
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Services</a></li>
@@ -30,7 +37,7 @@
   </header>
 
   <main>
-    
+
     <section>
 
       <article>
@@ -42,7 +49,7 @@
       <article>
         <h1>works</h1>
         <div id="gallery">
-          
+
           <div class="img-item"><img src="images/img01.jpg" alt="number 1"><p>number 1</p></div>
           <div class="img-item"><img src="images/img02.jpg" alt="number 2"><p>number 2</p></div>
           <div class="img-item"><img src="images/img03.jpg" alt="number 3"><p>number 3</p></div>
@@ -62,7 +69,7 @@
          </div>
       </article>
         <article>
-        <p>Access</p>
+        <h1>Access</h1>
        <div id="map"></div>
         </article>
     </section>

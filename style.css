@@ -13,7 +13,7 @@ header {
   height: 8rem;
   background: #333;
   box-shadow: 0 4px 0.3125rem rgba(0, 0, 0, .3);
-  background-image:linear-gradient(0deg, rgba(40, 40, 40, 0.59), rgba(0, 0, 0, 0)), url(images/img02.jpg);
+  background-image: linear-gradient(0deg, rgba(40, 40, 40, 0.59), rgba(0, 0, 0, 0)), url(images/img02.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -70,10 +70,12 @@ aside {
   padding: 1rem;
   background: #DDD;
 }
-aside img{
+
+aside img {
   width: 100%;
 }
-aside div{
+
+aside div {
   position: sticky;
 }
 
@@ -122,6 +124,7 @@ footer {
   border: 1px solid #ddd;
   visibility: visible;
   transition: .5s;
+  z-index: 400;
 }
 
 .cookie-consent.is-show {
@@ -167,15 +170,15 @@ footer {
   position: fixed;
   z-index: 1;
 }
-.loader {
 
- 
-}
+.loader {}
 
 @keyframes sk-scaleout {
   0% {
     transform: scale(0);
-  } 100% {
+  }
+
+  100% {
     transform: scale(1.0);
     opacity: 0;
   }
@@ -276,6 +279,18 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
+  section{
+    flex: none;
+  }
+
+  aside {
+    flex: none;
+      display: none;
+  }
+  .PCmenu {
+    display: none;
+  }
+
   .cookie-consent {
     flex-direction: column;
     width: 300px;
@@ -288,6 +303,8 @@ footer {
   }
 }
 
-#map{
- width:100%;
+
+#map {
+  height: 50vw;
+  width: 50vw;
 }
