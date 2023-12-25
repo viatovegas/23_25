@@ -287,3 +287,7 @@ footer {
     margin-bottom: 1em;
   }
 }
+
+#map{
+ width:100%;
+}
