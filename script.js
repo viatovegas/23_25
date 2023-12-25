@@ -63,4 +63,13 @@ for(let i = 0; i < items.length; i++){
     cc.classList.add('is-show');
   }
 }());
- 
+
+
+const map = L.map('map').setView([29.393184057355096, -98.48380711591551], 15);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([29.393184057355096, -98.48380711591551]).addTo(map)
+  .bindPopup('Cooming with us');
