@@ -110,44 +110,20 @@ for (let i = 0; i < items.length; i++) {
 
 
 //cookie popup
-
-(function () {
+(function() {
   let cc = document.querySelector('.cookie-consent');
   let ca = document.querySelector('.cookie-agree');
-  const flag = localStorage.getItem('popupFlag');
-  if (flag != null) {
-    const data = JSON.parse(flag);
-    if (data['value'] == 'true') {
-      window.onscroll = () => {
-        if (window.scrollY) {
-          popup();
-        }
-      }
-    } else {
-      const current = new Date();
-      if (current.getTime() > data['expire']) {
-        setWithExpiry('popupFlag', 'true', expire);
-        window.onscroll = () => {
-          if (window.scrollY) {
-            popup();
-          }
-        }
-      }
-    }
-  } else {
-    setWithExpiry('popupFlag', 'true', expire);
-    window.onscroll = () => {
-      if (window.scrollY) {
-        popup();
-      }
-    }
-  }
-  ca.addEventListener('click', () => {
-    cc.classList.add('cc-hide1');
-  });
 
+  // ポップアップを表示
+  popup();
+
+  // クリックイベントリスナーを追加
+  ca.addEventListener('click', () => {
+    cc.classList.add('cc-hide1'); // ポップアップを非表示にする
+  });
+  
   function popup() {
-    cc.classList.add('is-show');
+    cc.classList.add('is-show'); // ポップアップを表示する
   }
 }());
 
