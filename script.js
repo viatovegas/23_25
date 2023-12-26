@@ -1,3 +1,22 @@
+//swiper
+
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  autoplay: {
+    delay: 4000,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+//overlay menu
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const btnTrigger = document.getElementById("btnOl");
@@ -12,23 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlayMenu = document.getElementById("overlayMenu");
 
   btnTrigger.addEventListener("click", function () {
-    if (overlayMenu.style.display === "block") {
+    if (overlayMenu.style.pointerEvents === "auto") {
       fadeOut(overlayMenu, 0.1, function () {
-        overlayMenu.style.display = "none";
       });
     } else {
-      overlayMenu.style.display = "block";
-      overlayMenu.style.opacity = 0;
       fadeIn(overlayMenu, 0.1);
     }
   });
 
   function fadeIn(element, step) {
     let opacity = 0;
-    element.style.display = "block";
+    element.style.pointerEvents = "auto"; // マウスイベントを有効にする
+    element.style.opacity = opacity;
 
     function fadeInStep() {
       opacity += step;
+      if (opacity > 1) opacity = 1;
       element.style.opacity = opacity;
 
       if (opacity < 1) {
@@ -44,12 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function fadeOutStep() {
       opacity -= step;
+      if (opacity < 0) {
+        opacity = 0;
+      }
       element.style.opacity = opacity;
 
       if (opacity > 0) {
         requestAnimationFrame(fadeOutStep);
       } else {
-        element.style.display = "none";
+        element.style.pointerEvents = "none";
         if (callback) {
           callback();
         }
@@ -59,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(fadeOutStep);
   }
 });
+
+
+//loading
+
 window.onload = function () {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
@@ -83,6 +108,9 @@ for (let i = 0; i < items.length; i++) {
   items[i].animate(keyframes, options);
 }
 
+
+//cookie popup
+
 (function () {
   let cc = document.querySelector('.cookie-consent');
   let ca = document.querySelector('.cookie-agree');
@@ -91,7 +119,7 @@ for (let i = 0; i < items.length; i++) {
     const data = JSON.parse(flag);
     if (data['value'] == 'true') {
       window.onscroll = () => {
-        if (window.pageYOffset) {
+        if (window.scrollY) {
           popup();
         }
       }
@@ -100,7 +128,7 @@ for (let i = 0; i < items.length; i++) {
       if (current.getTime() > data['expire']) {
         setWithExpiry('popupFlag', 'true', expire);
         window.onscroll = () => {
-          if (window.pageYOffset) {
+          if (window.scrollY) {
             popup();
           }
         }
@@ -109,7 +137,7 @@ for (let i = 0; i < items.length; i++) {
   } else {
     setWithExpiry('popupFlag', 'true', expire);
     window.onscroll = () => {
-      if (window.pageYOffset) {
+      if (window.scrollY) {
         popup();
       }
     }
@@ -118,12 +146,12 @@ for (let i = 0; i < items.length; i++) {
     cc.classList.add('cc-hide1');
   });
 
-
   function popup() {
     cc.classList.add('is-show');
   }
 }());
 
+//map
 const map = L.map('map').setView([30.30270071203621, -97.67324649633491], 15);
 
 // タイルレイヤーを作成し、地図にセットする
@@ -133,4 +161,5 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([30.30270071203621, -97.67324649633491]).addTo(map)
-  .bindPopup('See ya ;)');
+  .bindPopup('A pretty CSS popup.<br> Easily customizable.');
+

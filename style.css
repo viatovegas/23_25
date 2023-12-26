@@ -6,13 +6,34 @@
 }
 
 
+.swiper {
+  width: 60vw;
+}
+
+.swiper-slide {
+  /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.swiper img {
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-color: rgb(91, 113, 153)
+}
+
+
 
 
 header {
   position: relative;
-  height: 8rem;
+  height: 8em;
   background: #333;
-  box-shadow: 0 4px 0.3125rem rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 0.3125em rgba(0, 0, 0, .3);
   background-image: linear-gradient(0deg, rgba(40, 40, 40, 0.59), rgba(0, 0, 0, 0)), url(images/img02.jpg);
   background-size: cover;
   background-position: center;
@@ -20,11 +41,13 @@ header {
 
 header h1 {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
+  top: 5vh;
+  left: 3vh;
   font-size: 2rem;
   color: white;
 }
+
+
 
 .fade-in {
   opacity: 1;
@@ -38,28 +61,19 @@ header h1 {
 }
 
 #overlayMenu {
-  padding-top: 32vh;
+  padding-top: 18vh;
 
 }
 
-#overlayMenu li a{
+#overlayMenu li a {
   font-size: 4vh;
   padding: 2vh;
 }
 
-#overlayMenu li a:hover {
-  background: #000;
-  color: #fff;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-
 
 .overlay {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -67,7 +81,7 @@ header h1 {
   list-style: none;
   transition: opacity 0.3s ease;
   align-items: center;
-  z-index: 100;
+  z-index: 2000;
 }
 
 .overlay img {
@@ -98,16 +112,21 @@ header h1 {
 .btn-trigger {
   cursor: pointer;
   position: absolute;
-  left: calc(100% - 70px);
+  left: calc(100% - 7vw);
+  margin-top: 3vw;
 }
 
 .btn-trigger span {
   display: block;
   width: 40px;
   height: 5px;
-  margin: 9px 0;
+
   background: #ffffff;
   transition: 0.4s;
+}
+
+.btn-trigger span:nth-child(2) {
+  margin: 9px 0;
 }
 
 .btn-trigger.active span:nth-of-type(1) {
@@ -121,6 +140,8 @@ header h1 {
 .btn-trigger.active span:nth-of-type(3) {
   transform: translateY(-14px) rotate(-45deg);
 }
+
+
 nav {
   position: absolute;
   top: 2rem;
@@ -210,8 +231,8 @@ footer {
   align-items: center;
   position: fixed;
   bottom: -200px;
-  left: calc(50% - 650px/2);
-  width: 650px;
+  left: calc(50% - 60em/2);
+  width: 60em;
   font-size: 12px;
   background: #fff;
   padding: 1.2em;
@@ -219,7 +240,7 @@ footer {
   border: 1px solid #ddd;
   visibility: visible;
   transition: .5s;
-  z-index: 400;
+  z-index: 2001;
 }
 
 .cookie-consent.is-show {
@@ -263,7 +284,7 @@ footer {
   transition: all 1s;
   background-color: rgb(180, 180, 180);
   position: fixed;
-  z-index: 1;
+  z-index: 3000;
 }
 
 .loader {}
@@ -373,25 +394,53 @@ footer {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 810px) {
+  header {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2100;
+  }
+
+  header h1 {
+    top: 5vh;
+    left: 3vh;
+  }
+
+  .swiper {
+    width: 80vw;
+  }
 
   aside {
     flex: none;
-      display: none;
+    display: none;
   }
+
   .PCmenu {
     display: none;
   }
 
   .cookie-consent {
     flex-direction: column;
-    width: 300px;
-    left: calc(50% - 300px/2);
+    width: 70vw;
+    left: calc(50% - 70vw/2);
   }
 
   .cookie-text {
     width: 100%;
     margin-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  .PhoneMenu {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn-trigger {
+    display: none;
   }
 }
 

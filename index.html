@@ -2,31 +2,39 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoSec</title>
 
-    <title>AutoSec</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
+<div id="loading">
+  <div class="loader"></div>
+</div>
+
+
 <body>
-  <div id="loading">
-    <div class="loader"></div>
-  </div>
+This company doesn't exist.
 
+<div class="PhoneMenu">
   <div id="overlayMenu" class="overlay">
-    <p>menu</p>
-    <li><a href="contents.html">Content</a></li>
-    <li><a href="guideline.html">Guideline</a></li>
-    <li><a href="talent.html">Talent</a></li>
-    <li><a href="links.html">Links</a></li>
-
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Our Team</a></li>
+    <li><a href="#">Employment</a></li>
+    <li><a href="#">Links</a></li>
+  </div>
 </div>
 
   <header>
@@ -45,46 +53,94 @@
         <span></span>
         <span></span>
         <span></span>
-    </div>
+      </div>
     </nav>
   </header>
 
   <main>
 
     <section>
+      <article>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="images/img01.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/img02.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/img03.jpg" alt=""></div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </article>
       <article>
         <div>
           <h1>Welcome to AutoSec,</h1>
-        <p> your trusted partner in home security. We are dedicated to providing comprehensive and reliable security solutions to protect your loved ones and your property. With our state-of-the-art technology and experienced team, we ensure peace of mind by customizing security systems to meet your unique needs. Explore our website to discover our range of services, including advanced alarm systems, 24/7 monitoring, video surveillance, and smart home integration. Choose AutoSec for top-notch security that you can depend on.</p>
+          <p> your trusted partner in home security. We are dedicated to providing comprehensive and reliable security
+            solutions to protect your loved ones and your property. With our state-of-the-art technology and experienced
+            team, we ensure peace of mind by customizing security systems to meet your unique needs. Explore our website
+            to discover our range of services, including advanced alarm systems, 24/7 monitoring, video surveillance,
+            and smart home integration. Choose AutoSec for top-notch security that you can depend on.BUT THIS IS A FAKE
+            COMPANY.</p>
         </div>
       </article>
       <article>
         <h1>works</h1>
         <div id="gallery">
 
-          <div class="img-item"><img src="images/img01.jpg" alt="number 1"><p>number 1</p></div>
-          <div class="img-item"><img src="images/img02.jpg" alt="number 2"><p>number 2</p></div>
-          <div class="img-item"><img src="images/img03.jpg" alt="number 3"><p>number 3</p></div>
-          <div class="img-item"><img src="images/img04.jpg" alt="number 4"><p>number 4</p></div>
-          <div class="img-item"><img src="images/img05.jpg" alt="number 5"><p>number 5</p></div>
-          <div class="img-item"><img src="images/img06.jpg" alt="number 6"><p>number 6</p></div>
-         </div>
+          <div class="img-item"><img src="images/img01.jpg" alt="number 1">
+            <p>number 1</p>
+          </div>
+          <div class="img-item"><img src="images/img02.jpg" alt="number 2">
+            <p>number 2</p>
+          </div>
+          <div class="img-item"><img src="images/img03.jpg" alt="number 3">
+            <p>number 3</p>
+          </div>
+          <div class="img-item"><img src="images/img04.jpg" alt="number 4">
+            <p>number 4</p>
+          </div>
+          <div class="img-item"><img src="images/img05.jpg" alt="number 5">
+            <p>number 5</p>
+          </div>
+          <div class="img-item"><img src="images/img06.jpg" alt="number 6">
+            <p>number 6</p>
+          </div>
+        </div>
       </article>
       <article>
         <div id="gallery">
-          <div class="img-item"><img src="images/img01.jpg" alt="number 1"><p>number 1</p></div>
-          <div class="img-item"><img src="images/img02.jpg" alt="number 2"><p>number 2</p></div>
-          <div class="img-item"><img src="images/img03.jpg" alt="number 3"><p>number 3</p></div>
-          <div class="img-item"><img src="images/img04.jpg" alt="number 4"><p>number 4</p></div>
-          <div class="img-item"><img src="images/img05.jpg" alt="number 5"><p>number 5</p></div>
-          <div class="img-item"><img src="images/img06.jpg" alt="number 6"><p>number 6</p></div>
-         </div>
+          <div class="img-item"><img src="images/img01.jpg" alt="number 1">
+            <p>number 1</p>
+          </div>
+          <div class="img-item"><img src="images/img02.jpg" alt="number 2">
+            <p>number 2</p>
+          </div>
+          <div class="img-item"><img src="images/img03.jpg" alt="number 3">
+            <p>number 3</p>
+          </div>
+          <div class="img-item"><img src="images/img04.jpg" alt="number 4">
+            <p>number 4</p>
+          </div>
+          <div class="img-item"><img src="images/img05.jpg" alt="number 5">
+            <p>number 5</p>
+          </div>
+          <div class="img-item"><img src="images/img06.jpg" alt="number 6">
+            <p>number 6</p>
+          </div>
+        </div>
       </article>
-        <article>
+      <article>
         <h1>Access</h1>
-       <div id="map"></div>
-        </article>
+        <div id="map"></div>
+      </article>
     </section>
 
     <aside>
@@ -96,12 +152,13 @@
   </main>
 
   <div class="cookie-consent">
-    <div class="cookie-text">This website uses to eat cookies,You want some?<a href="images/Cookie.webp" target="_blank" rel="noopener noreferrer">(more cookies...)</a></div>
+    <div class="cookie-text">This website uses to eat cookies,You want some?<a href="images/Cookie.webp" target="_blank"
+        rel="noopener noreferrer">(more cookies...)</a></div>
     <div class="cookie-agree">OK</div>
   </div>
 
   <footer>
-    &copy; http://www.example.com
+    &copy; This company doesn't exist.
   </footer>
 
 </body>
